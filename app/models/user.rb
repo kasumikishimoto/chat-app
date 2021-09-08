@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name,presence: true 
   #nameカラムは、空の時DBにデータを保存しないバリデーション！
+  has_many :room_users
+  has_many : rooms, though: :room_users
 end
