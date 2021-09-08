@@ -1,5 +1,9 @@
 class RoomsController < ApplicationController
   def new #チャットルームの新規作成なのでnewアクション
+
+    def index
+    end
+    
     @room = Room.new
   end
 
