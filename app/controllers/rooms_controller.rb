@@ -1,9 +1,9 @@
 class RoomsController < ApplicationController
-  def new #チャットルームの新規作成なのでnewアクション
 
-    def index
-    end
-    
+  def index
+  end
+
+  def new #チャットルームの新規作成なのでnewアクション
     @room = Room.new
   end
 
@@ -14,6 +14,12 @@ class RoomsController < ApplicationController
     else
       render :new
     end
+   end
+
+   def destroy
+     room = Room.find(params[:id])
+     room.destroy
+     redirect_to root_path
    end
 
    private
